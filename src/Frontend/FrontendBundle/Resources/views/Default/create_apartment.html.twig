@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+    <h2 class="page-header">Add Your Apartment</h2>
+        {{ form_start(form, {'attr':{'class':'form-horizontal' }}) }}
+        {{ form_errors(form) }}
+
+        <div class="form-group row">
+                {{ form_label(form.email, '', {'label_attr':{'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-10">
+                {{ form_errors(form.email) }}
+                {{ form_widget(form.email, {'attr':{'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form_label(form.street, '', {'label_attr':{'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-10">
+                {{ form_errors(form.street) }}
+                {{ form_widget(form.street, {'attr':{'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form_label(form.postcode, '', {'label_attr':{'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-10">
+                {{ form_errors(form.postcode) }}
+                {{ form_widget(form.postcode, {'attr':{'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form_label(form.town, '', {'label_attr':{'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-10">
+                {{ form_errors(form.town) }}
+                {{ form_widget(form.town, {'attr':{'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form_label(form.country, '', {'label_attr':{'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-10">
+                {{ form_errors(form.country) }}
+                {{ form_widget(form.country, {'attr':{'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form_label(form.photo, '', {'label_attr':{'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-10">
+                {{ form_errors(form.photo) }}
+                {{ form_widget(form.photo, {'attr':{'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="form-group row">
+            {{ form_label(form.moveindate, '', {'label_attr':{'class': 'col-sm-2 control-label'}}) }}
+            <div class="col-sm-10">
+                {{ form_errors(form.moveindate) }}
+                {{ form_widget(form.moveindate, {'attr':{'class': ''}}) }}
+            </div>
+        </div>
+<hr>
+
+        {{ form_end(form) }}
+
+    </div>
+{% endblock body %}

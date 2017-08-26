@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+
+    </head>
+    <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Animus</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {% if app.request.attributes.get('_route') == 'home' %}active{% endif %}">
+                    <a class="nav-link" href="{{ path('home') }}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item {% if app.request.attributes.get('_route') == 'apartments' %}active{% endif %}">
+                    <a class="nav-link" href="{{ path('apartments') }}">Apartments</a>
+                </li>
+                <li class="nav-item {% if app.request.attributes.get('_route') == 'apartmentCreate' %}active{% endif %}">
+                    <a class="nav-link" href="{{ path('apartmentCreate') }}">Add your appartment</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

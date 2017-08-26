@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h2 class="page-header">Apartments</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Address</th>
+                <th>Moved in date</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for repo in repos %}
+                <tr>
+                    <td>{{ repo.street }},
+                        {{ repo.town   }},
+                        {{ repo.country }},
+                        {{ repo.postcode }}
+                    </td>
+                    <td>{{ repo.moveInDate|date("m/d/Y") }}</td>
+                    <td><a class="btn btn-info btn-sm" href="{{ path('view', {'id': repo.id}) }}">Show</a> </td>
+                </tr>
+            {%  endfor %}
+            </tbody>
+        </table>
+        </div>
+{% endblock body %}
